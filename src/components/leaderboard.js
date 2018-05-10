@@ -46,7 +46,7 @@ class Leaderboard extends Component {
 
     return (
       <div className="table-responsive">
-        <table className="table table-hover table-dark table-sm" id="example">
+        <table className="table table-hover table-dark" id="example">
           <thead>
             <tr>
               <th scope="col">#</th>

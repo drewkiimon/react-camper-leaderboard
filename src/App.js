@@ -3,16 +3,15 @@ import Leaderboard from "./components/leaderboard";
 import Navigation from "./components/navbar";
 
 class App extends Component {
-  dataTableStuff() {
-    console.log("I was loaded properly on load");
-  }
   render() {
     return (
       <div>
         <Navigation />
         <div className="container-fluid">
           <div className="row">
-            <Leaderboard onLoad={this.dataTableStuff} />
+            <div className="col-lg-8 offset-lg-2">
+              <Leaderboard />
+            </div>
           </div>
         </div>
       </div>

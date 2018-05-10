@@ -32,10 +32,11 @@ class Leaderboard extends Component {
     }
 
     console.log("rendered");
-
+    var keyVal = 1;
     const stuff = this.state.term.map(camper => {
       return (
         <CamperRow
+          key={keyVal++}
           username={camper.username}
           alltime={camper.alltime}
           recent={camper.recent}
@@ -45,7 +46,7 @@ class Leaderboard extends Component {
 
     return (
       <div className="table-responsive">
-        <table className="table table-hover table-dark table-sm">
+        <table className="table table-hover table-dark table-sm" id="example">
           <thead>
             <tr>
               <th scope="col">#</th>

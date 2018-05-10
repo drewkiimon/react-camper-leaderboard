@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
-const CamperRow = () => {
+var count = 1;
+
+const CamperRow = props => {
   return (
     <tr>
-      <th scope="row">{this.props.count}</th>
-      <td>{this.props.username}</td>
-      <td>{this.props.alltime}</td>
-      <td>{this.props.recent}</td>
+      <th scope="row">{count++}</th>
+      <td>{props.username}</td>
+      <td>{props.alltime}</td>
+      <td>{props.recent}</td>
     </tr>
   );
 };

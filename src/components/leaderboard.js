@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CamperRow from "./camperRow";
 import axios from "axios";
 
 const TOP_THIRTY_DAYS =
@@ -29,21 +30,16 @@ class Leaderboard extends Component {
     if (!this.state.term) {
       return "Loading...";
     }
-    // const topThirtyDaysPeople = this.state.map(person => {
-    //   <li>person.user</li>;
-    // });
 
     console.log("rendered");
-    console.log(this.state.term);
-    var count = 1;
+
     const stuff = this.state.term.map(camper => {
       return (
-        <tr>
-          <th scope="row">{count++}</th>
-          <td>{camper.username}</td>
-          <td>{camper.alltime}</td>
-          <td>{camper.recent}</td>
-        </tr>
+        <CamperRow
+          username={camper.username}
+          alltime={camper.alltime}
+          recent={camper.recent}
+        />
       );
     });
 

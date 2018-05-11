@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../camperRow.css";
 
 var count = 1;
 
@@ -7,8 +8,14 @@ const CamperRow = props => {
     <tr>
       <th scope="row">{count++}</th>
       <td>
-        <img src={props.imageUrl} width="32" height="32" alt="image" />
-        {props.username}
+        <img
+          className="imageIcon"
+          src={props.imageUrl}
+          width="32"
+          height="32"
+          alt="image"
+        />
+        &nbsp;{props.username}
       </td>
       <td>{props.alltime}</td>
       <td>{props.recent}</td>

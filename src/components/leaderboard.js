@@ -10,33 +10,33 @@ class Leaderboard extends Component {
   constructor(props) {
     super(props);
     this.state = { term: "" };
-
-    console.log(this.state);
-  }
-
-  componentDidMount() {
-    console.log("Mounted");
-    console.log(this.state.term);
   }
 
   componentWillMount() {
-    console.log("This will mount.");
     axios.get(`${TOP_THIRTY_DAYS}`).then(response => {
       this.setState({ term: response.data });
     });
   }
 
+  onClickAllTime(e) {
+    //<i className="fas fa-arrow-up fa-xs" />
+    console.log("on click");
+    const clickedElement = e.target;
+    console.log(clickedElement);
+  }
+
   render() {
+    // If there's no state yet, we are going to wait
     if (!this.state.term) {
       return "Loading...";
     }
 
-    console.log("rendered");
     var keyVal = 1;
     const stuff = this.state.term.map(camper => {
       return (
         <CamperRow
           key={keyVal++}
+          imageUrl={camper.img}
           username={camper.username}
           alltime={camper.alltime}
           recent={camper.recent}
@@ -50,9 +50,11 @@ class Leaderboard extends Component {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Username</th>
-              <th scope="col">All Time</th>
-              <th scope="col">Recent</th>
+              <th scope="col">Camper Name</th>
+              <th scope="col" onClick={this.onClickAllTime}>
+                All time points
+              </th>
+              <th scope="col">Points in past 30 days</th>
             </tr>
           </thead>
           <tbody>{stuff}</tbody>

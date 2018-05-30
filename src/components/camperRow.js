@@ -9,7 +9,7 @@ const CamperRow = props => {
   return (
     <tr>
       <th scope="row">{count++}</th>
-      <td>
+      <td className="user-name">
         <a href={url} target="_blank">
           <img
             className="imageIcon"
@@ -21,8 +21,8 @@ const CamperRow = props => {
           &nbsp;{props.username}
         </a>
       </td>
-      <td>{props.alltime}</td>
-      <td>{props.recent}</td>
+      <td className="all-time">{props.alltime}</td>
+      <td className="thirty-days">{props.recent}</td>
     </tr>
   );
 };

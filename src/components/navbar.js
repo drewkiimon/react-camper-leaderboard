@@ -4,7 +4,7 @@ import logo from "./AP.png";
 const Navigation = () => {
   return (
     <nav className="navbar navbar-light bg-light">
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="http://www.andrewpagan.me/">
         <img
           src={logo}
           width="30"
